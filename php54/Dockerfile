@@ -1,8 +1,6 @@
 FROM phusion/baseimage
 MAINTAINER Kaluzki Demjan <kaluzkidemjan@gmail.com>
 
-CMD ["/sbin/my_init"]
-
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 ENV DEBIAN_FRONTEND noninteractive
