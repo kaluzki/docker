@@ -19,5 +19,7 @@ RUN apt-key adv --keyserver pgp.mit.edu --recv-key 799058698E65316A2E7A4FF42EAE1
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+ENV PATH "$PATH:/usr/local/zend/bin"
+
 EXPOSE 80
 EXPOSE 10081
