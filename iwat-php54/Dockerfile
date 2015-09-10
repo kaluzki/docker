@@ -64,7 +64,8 @@ RUN service zend-server start && \
     $ZS extension-off -N $ZS_PASSWD -K $ZS_KEY -e 'Zend Debugger' && sleep 5s && \
     $ZS restart -N $ZS_PASSWD -K $ZS_KEY && \
 
-
     $ZS app-deploy -N $ZS_PASSWD -K $ZS_KEY -d TRUE -p /tmp/app.zpk -b / && \
     service zend-server stop && \
     echo "The server key is $ZS_KEY"
+
+RUN ln -s /usr/local/zend/var/apps/http/__default__/0/1_2 /app
