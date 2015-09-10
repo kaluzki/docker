@@ -1,8 +1,6 @@
 FROM phusion/baseimage
 MAINTAINER Kaluzki Demjan <kaluzkidemjan@gmail.com>
 
-CMD ["/sbin/my_init"]
-
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
