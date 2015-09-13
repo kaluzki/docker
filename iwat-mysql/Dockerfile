@@ -1,9 +1,11 @@
 FROM kaluzki/mysql
 MAINTAINER Kaluzki Demjan <kaluzkidemjan@gmail.com>
 
-COPY create-ixuser.sql /tmp/
-RUN service mysql start && \
-    mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql mysql && \
-    cat /tmp/create-ixuser.sql | mysql  && \
-    rm /tmp/create-ixuser.sql && \
+RUN service mysql start && sleep 10s && \
+    echo "CREATE USER 'ixuser'@'%' IDENTIFIED BY 'ixuser';\n\
+          GRANT ALL ON *.* TO 'ixuser'@'%' WITH GRANT OPTION;\n\
+          GRANT ALL PRIVILEGES ON  \`ixuser\_%\` . * TO  'ixuser'@'%';\n\
+          FLUSH PRIVILEGES;" | mysql -uroot -proot && \
     service mysql stop
+
+VOLUME ["/var/lib/mysql"]
