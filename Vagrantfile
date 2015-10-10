@@ -1,13 +1,21 @@
-$prepareDocker = <<SCRIPT
-echo "DOCKER_OPTS='--bip=172.17.42.1/24 --dns=172.17.42.1'" > /etc/default/docker
-echo "nameserver 172.17.42.1" > /etc/resolvconf/resolv.conf.d/head
-SCRIPT
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
     config.vm.box = "phusion/ubuntu-14.04-amd64"
-    config.vm.provision "shell", inline: $prepareDocker
-    config.vm.provision "docker" do |d|
-        d.pull_images "phusion/baseimage"
-        d.run "dnsdock", image: "tonistiigi/dnsdock:v1.10.0", args: "-d -v '/var/run/docker.sock:/var/run/docker.sock' -p 172.17.42.1:53:53/udp"
-    end
+
+    config.vm.synced_folder ".persistent/var/lib/docker", "/var/lib/docker",
+        create: true,
+        owner: "root",
+        group: "root"
+
+    config.vm.provision "install-docker", type: "shell", inline: <<-SHELL
+        apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+        echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/sources.list.d/docker.list
+        apt-get update
+        apt-get purge lxc-docker*
+        apt-cache policy docker-engine
+        apt-get install -y docker-engine=1.8.2-0~trusty
+        usermod -aG docker vagrant
+    SHELL
 end
