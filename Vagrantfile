@@ -36,6 +36,8 @@ Vagrant.configure("2") do |config|
 
         docker run -d -p 5000:5000 --restart=always --name registry \
             -e SEARCH_BACKEND=sqlalchemy \
+            -e STORAGE_PATH=/registry \
+            -v /vagrant/.persistent/registry:/registry \
             registry:2.1.1
     SHELL
 end
