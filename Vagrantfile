@@ -17,6 +17,10 @@ Vagrant.configure("2") do |config|
         apt-cache policy docker-engine
         apt-get install -y docker-engine=1.8.2-0~trusty lvm2 thin-provisioning-tools
         usermod -aG docker vagrant
+
+        curl -L https://github.com/docker/compose/releases/download/1.4.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+        chmod +x /usr/local/bin/docker-compose
+        curl -L https://raw.githubusercontent.com/docker/compose/1.4.2/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
     SHELL
 
     config.vm.provision "configure-docker", type: "shell", inline: <<-SHELL
