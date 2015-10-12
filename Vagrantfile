@@ -39,9 +39,7 @@ Vagrant.configure("2") do |config|
             tonistiigi/dnsdock:v1.10.0
 
         docker run -d -p 5000:5000 --restart=always --name registry \
-            -e SEARCH_BACKEND=sqlalchemy \
-            -e STORAGE_PATH=/registry \
-            -v /vagrant/.persistent/registry:/registry \
+            -v /vagrant/.persistent/var/lib/registry:/var/lib/registry \
             registry:2.1.1
     SHELL
 end
