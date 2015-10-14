@@ -17,11 +17,17 @@
 ## Run development environment with Vagrant
 
  * docker 1.8.2
+ * docker-compose 1.4.2
  * registry: 2.1.1
   * ```sh curl http://localhost:5000/v2/_catalog```
  * tonistiigi/dnsdock 1.10.0
+  * ```sh curl http://dnsdock.docker/services```
 
 ```sh
+# build box
+guest@system:$ VBoxManage list runningvms
+guest@system:$ vagrant package --base github_default_id
+
 # prepare and login
 guest@system:$ vagrant plugin install vagrant-vbguest
 guest@system:$ vagrant up
