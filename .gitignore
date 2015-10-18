@@ -1,4 +1,7 @@
 .idea/
-.vagrant/
 .persistent/
 iwat-app/*/**
+
+**/.vagrant
+**/packer_cache
+**/output-virtualbox-ovf
