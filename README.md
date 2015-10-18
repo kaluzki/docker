@@ -19,9 +19,9 @@
  * docker 1.8.2
  * docker-compose 1.4.2
  * registry: 2.1.1
-  * ```sh curl http://localhost:5000/v2/_catalog```
+  * ```curl http://localhost:5000/v2/_catalog```
  * tonistiigi/dnsdock 1.10.0
-  * ```sh curl http://dnsdock.docker/services```
+  * ```curl http://dnsdock.docker/services```
 
 ```sh
 # build box
@@ -31,6 +31,9 @@ guest@system:$ vagrant package --base github_default_id
 # prepare and login
 guest@system:$ vagrant plugin install vagrant-vbguest
 guest@system:$ vagrant up
+guest@system:$ route add -net 172.17.0.0 netmask 255.255.0.0 gw 10.10.10.10
+guest@system:$ echo "nameserver 172.17.42.1" > /etc/resolvconf/resolv.conf.d/head
+guest@system:$ service resolvconf restart
 guest@system:$ vagrant ssh
 
 # go to the sync folder
