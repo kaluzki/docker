@@ -2,6 +2,9 @@
   "variables": {
     "home": "{{env `HOME`}}"
   },
+  "push": {
+    "name": "kaluzki/docker"
+  },
   "builders": [{
     "type": "virtualbox-ovf",
     "source_path": "{{user `home`}}/.vagrant.d/boxes/ubuntu-VAGRANTSLASH-trusty64/20151008.0.2/virtualbox/box.ovf",
@@ -14,27 +17,17 @@
     "type": "shell",
     "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
-      "../../scripts/ubuntu/docker-1.8.2.sh",
-      "../../scripts/ubuntu/compose-1.4.2.sh"
+      "{{template_dir}}/../../scripts/ubuntu/docker-1.8.2.sh",
+      "{{template_dir}}/../../scripts/common/compose-1.4.2.sh"
     ]
   }],
   "post-processors": [
     [
       {
         "type": "vagrant",
-        "include": ["./Vagrantfile"],
-        "output": "./packer_cache/package.box",
+        "include": ["{{template_dir}}/Vagrantfile"],
+        "output": "{{template_dir}}/package.box",
         "keep_input_artifact": false
-      },
-      {
-        "type": "atlas",
-        "only": ["virtualbox-ovf"],
-        "artifact": "kaluzki/docker",
-        "artifact_type": "vagrant.box",
-        "metadata": {
-          "provider": "virtualbox",
-          "version": "0.0.2"
-        }
       }
     ]
   ]
