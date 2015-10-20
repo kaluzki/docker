@@ -16,8 +16,8 @@
 
 ```sh
 # build box
-guest@system:$ VBoxManage list runningvms
-guest@system:$ vagrant package --base github_default_id
+guest@system:$ packer build packer/templates/kaluzki-docker/template.json
+guest@system:$ vagrant box add --name kaluzki/docker packer/templates/kaluzki-docker/package.box
 
 # prepare and login
 guest@system:$ vagrant plugin install vagrant-vbguest
