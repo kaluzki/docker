@@ -5,5 +5,7 @@ echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/source
 apt-get update
 apt-get purge lxc-docker*
 apt-cache policy docker-engine
-apt-get install -y docker-engine=1.8.2-0~trusty lvm2 thin-provisioning-tools
+apt-get install -y docker-engine="$DOCKER_VERSION~trusty" lvm2 thin-provisioning-tools bridge-utils
 usermod -aG docker vagrant
+echo "DOCKER_OPTS='--storage-driver=devicemapper'" > /etc/default/docker
+service docker restart
