@@ -33,6 +33,7 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "{{template_dir}}/../../scripts/common/vagrant.sh",
+        "{{template_dir}}/../../scripts/ubuntu/oh-my-zsh.sh",
         "{{template_dir}}/../../scripts/ubuntu/docker.sh",
         "{{template_dir}}/../../scripts/common/compose.sh",
         "{{template_dir}}/../../scripts/common/dnsdock.sh",
