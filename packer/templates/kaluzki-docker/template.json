@@ -44,7 +44,6 @@
     [
       {
         "type": "vagrant",
-        "include": ["{{template_dir}}/Vagrantfile"],
         "output": "{{template_dir}}/package.box",
         "keep_input_artifact": false
       }
