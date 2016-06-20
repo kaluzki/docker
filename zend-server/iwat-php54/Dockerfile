@@ -1,6 +1,6 @@
-# docker build --no-cache -t kaluzki/iwat-zend-server:php56 iwat/zend-server/php56
-# docker run --rm -v <app>:/var/www/html -p 80:80 kaluzki/iwat-zend-server:php56
-FROM kaluzki/zend-server:php56
+# docker build --no-cache -t kaluzki/zend-server:iwat-php54 zend-server/iwat-php54
+# docker run --rm -v <app>:/var/www/html -p 80:80 kaluzki/zend-server:iwat-php54
+FROM kaluzki/zend-server:php54
 MAINTAINER Kaluzki Demjan <kaluzkidemjan@gmail.com>
 
 RUN docker-zs-api extension-off -e 'Zend Debugger' && \

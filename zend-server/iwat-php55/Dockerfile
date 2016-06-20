@@ -1,5 +1,5 @@
-# docker build --no-cache -t kaluzki/iwat-zend-server:php55 iwat/zend-server/php55
-# docker run --rm -v <app>:/var/www/html -p 80:80 kaluzki/iwat-zend-server:php55
+# docker build --no-cache -t kaluzki/zend-server:iwat-php55 zend-server/iwat-php55
+# docker run --rm -v <app>:/var/www/html -p 80:80 kaluzki/zend-server:iwat-php55
 FROM kaluzki/zend-server:php55
 MAINTAINER Kaluzki Demjan <kaluzkidemjan@gmail.com>
 
