@@ -1,22 +1,15 @@
-# kaluzki/zend-server:abstract
-* Apache 2.4
-
-# kaluzki/zend-server:php54
-* PHP 5.4
-* Zend Server 7.0
+# Zend Server
+* Apache
+* PHP
 * XDebug
 
-# kaluzki/zend-server:php55
-* PHP 5.5
-* Zend Server 8.5
-* XDebug
-
-# kaluzki/zend-server:php56
-* PHP 5.6
-* Zend Server 8.5
-* XDebug
-
-# kaluzki/zend-server:php70
-* PHP 7.0
-* Zend Server 9.0
-* XDebug
+### Dockerfiles
+* [kaluzki/zend-server:abstract](https://github.com/kaluzki/docker/blob/master/zend-server/abstract/Dockerfile)
+* [kaluzki/zend-server:php54](https://github.com/kaluzki/docker/blob/master/zend-server/php54/Dockerfile)
+* [kaluzki/zend-server:php55](https://github.com/kaluzki/docker/blob/master/zend-server/php55/Dockerfile)
+* [kaluzki/zend-server:php56](https://github.com/kaluzki/docker/blob/master/zend-server/php56/Dockerfile)
+* [kaluzki/zend-server:php70,kaluzki/zend-server:latest](https://github.com/kaluzki/docker/blob/master/zend-server/php70/Dockerfile)
+* [kaluzki/zend-server:iwat-php54](https://github.com/kaluzki/docker/blob/master/zend-server/iwat-php54/Dockerfile)
+* [kaluzki/zend-server:iwat-php55](https://github.com/kaluzki/docker/blob/master/zend-server/iwat-php55/Dockerfile)
+* [kaluzki/zend-server:iwat-php56](https://github.com/kaluzki/docker/blob/master/zend-server/iwat-php56/Dockerfile)
+* [kaluzki/zend-server:iwat-php70](https://github.com/kaluzki/docker/blob/master/zend-server/iwat-php70/Dockerfile)
