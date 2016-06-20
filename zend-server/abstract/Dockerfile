@@ -1,4 +1,5 @@
-# docker build -t kaluzki/zend-server:abstract zend-server/abstract
+# docker build --no-cache -t kaluzki/zend-server:abstract zend-server/abstract
+# docker run --rm -p 80:80 kaluzki/zend-server:abstract
 FROM kaluzki/abstract
 MAINTAINER Kaluzki Demjan <kaluzkidemjan@gmail.com>
 
@@ -24,3 +25,5 @@ RUN docker-apt apache2 \
 
 EXPOSE 80
 EXPOSE 10081
+
+CMD ["docker-apache-foreground"]

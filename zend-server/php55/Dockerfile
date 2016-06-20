@@ -1,4 +1,5 @@
-# docker build -t kaluzki/zend-server:php55 zend-server/php55
+# docker build --no-cache -t kaluzki/zend-server:php55 zend-server/php55
+# docker run --rm -p 80:80 kaluzki/zend-server:php55
 FROM kaluzki/zend-server:abstract
 MAINTAINER Kaluzki Demjan <kaluzkidemjan@gmail.com>
 
