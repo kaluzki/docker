@@ -1,4 +1,4 @@
-FROM kaluzki/php54
+FROM kaluzki/php55
 MAINTAINER Kaluzki Demjan <kaluzkidemjan@gmail.com>
 
 COPY app.zpk /tmp/

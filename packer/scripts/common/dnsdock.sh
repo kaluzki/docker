@@ -14,5 +14,5 @@ docker run -d -p 53:53/udp --restart=always --name dnsdock \
     -v /var/run/docker.sock:/var/run/docker.sock \
     tonistiigi/dnsdock:$DNSDOCK_VERSION
 
-echo "nameserver 172.17.42.1" > /etc/resolvconf/resolv.conf.d/tail
+echo "nameserver 172.17.42.1" > /etc/resolvconf/resolv.conf.d/head
 service resolvconf restart

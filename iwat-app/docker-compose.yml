@@ -3,12 +3,12 @@ web:
   command: /usr/sbin/apache2ctl -D FOREGROUND
   ports:
    - "80:80"
-  volumes_from:
-   - interexa
   volumes:
    - .:/app
   links:
    - mysql
+  volumes_from:
+   - interexa
 
 interexa:
   image: kaluzki/iwat-volume
