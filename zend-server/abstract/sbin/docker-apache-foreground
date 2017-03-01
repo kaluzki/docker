@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+rm -f /usr/local/apache2/logs/httpd.pid
+exec apache2ctl -D FOREGROUND

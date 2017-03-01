@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+docker-apt autoconf build-essential
+service zend-server stop
+/usr/local/zend/bin/pecl install xdebug
+chmod +x /usr/local/zend/lib/php_extensions/xdebug.so
+apt-get remove -y autoconf build-essential
+exit 0
