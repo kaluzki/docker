@@ -5,3 +5,5 @@ MAINTAINER kaluzkidemjan@gmail.com
 RUN set -x \
     && docker-apk-install \
         apache2
+
+EXPOSE 80 443
