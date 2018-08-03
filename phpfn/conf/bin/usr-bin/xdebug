@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec $(which php) -d zend_extension=xdebug.so "$@"
