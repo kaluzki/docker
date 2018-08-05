@@ -33,7 +33,7 @@
 * [6](https://github.com/kaluzki/docker/blob/master/gosu/centos/6.Dockerfile)
 * [6.9](https://github.com/kaluzki/docker/blob/master/gosu/centos/6.9.Dockerfile)
 * [6.8](https://github.com/kaluzki/docker/blob/master/gosu/centos/6.8.Dockerfile)
-* [.6.7](https://github.com/kaluzki/docker/blob/master/gosu/centos/.6.7.Dockerfile)
+* [6.7](https://github.com/kaluzki/docker/blob/master/gosu/centos/6.7.Dockerfile)
 * [6.6](https://github.com/kaluzki/docker/blob/master/gosu/centos/6.6.Dockerfile)
 
 # [gosu/debian](https://hub.docker.com/r/gosu/debian/)
