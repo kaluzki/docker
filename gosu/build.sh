@@ -30,6 +30,12 @@ RUN set -x \\
 EOF
             [ ${build} ] && {
                 docker build -t ${maintainer}/${from}:${tag} -f ${file} .
+
+                git checkout --orphan "${maintainer}/${from}/${tag}"
+                git reset
+                mv ${file} ../Dockerfile
+                git add ../Dockerfile
+                git commit -m "${maintainer}/${from}/${tag}"
             }
         done
     done
