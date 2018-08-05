@@ -8,4 +8,4 @@ RUN set -x \
 		openssl \
 	&& /opt/gosu/gosu.download.sh \
     && apk del .gosu-deps \
-    && rm /tmp/* -r
+    && rm /tmp/* -rf
