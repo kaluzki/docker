@@ -15,7 +15,7 @@ isCliTask() {
   return 1
 }
 
-isCliTask "$TASK" && {
+if isCliTask "$TASK"; then
     CLI_SCRIPT="$TASK"
     TASK="cli"
-}
+fi

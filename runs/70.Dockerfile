@@ -1,4 +1,5 @@
-FROM webdevops/php-dev:debian-8
+# docker build -t runs/70 -f 70.Dockerfile .
+FROM webdevops/php-dev:7.0
 
 ENV XDEBUG_CONFIG="idekey=phpstorm" \
     PHP_IDE_CONFIG="serverName=app" \
@@ -7,5 +8,8 @@ ENV XDEBUG_CONFIG="idekey=phpstorm" \
     PHP_DEBUGGER=none
 
 COPY conf/ /opt/docker/
+WORKDIR /app
 
-RUN set -x && docker-run-bootstrap
+RUN set -x \
+    &&  docker-run-bootstrap \
+    &&  docker-image-cleanup
